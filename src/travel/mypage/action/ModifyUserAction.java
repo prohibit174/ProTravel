@@ -7,31 +7,38 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import travel.users.model.Users;
 import travel.users.model.UsersDao;
 
-public class UpdateUserAction implements Action {
+public class ModifyUserAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
+		
 		HttpSession session = request.getSession();
 		String u_id = session.getAttribute("member_id").toString();
 		
-		String u_pwd = request.getParameter("u_pwd");
-		
-		System.out.println("update"+u_pwd);
 		UsersDao dao = UsersDao.getInstance();
-		boolean result = dao.checkPw(u_id, u_pwd);
+		
+		Users users = dao.userDetail(u_id);
+		
+		users.setU_pwd(request.getParameter("u_pwd"));
+		users.setU_license(request.getParameter("u_license"));
+		users.setU_address(request.getParameter("u_address"));
+		users.setU_job(request.getParameter("u_job"));
+		users.setU_lang(request.getParameter("u_lang"));
+		users.setU_religion(request.getParameter("u_religion"));
+		users.setU_style(request.getParameter("u_style"));
+		
+		dao.userUpdate(users);
 		
 		ActionForward forward = new ActionForward();
+		forward.setRedirect(true);
+		forward.setPath("home.main");
+		System.out.println("modifyAction");
 		
-		if(result==true){
-			forward.setRedirect(false);
-			forward.setPath("/MyPage/mypage_usersUpdateForm.jsp");
-		}else{
-			forward.setRedirect(false);
-			forward.setPath("/MyPage/mypage_FailCheckPw.jsp");
-		}
+		
 		return forward;
 	}
 
