@@ -1,6 +1,10 @@
 package travel.users.model;
 
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.print.attribute.HashPrintJobAttributeSet;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -101,14 +105,48 @@ public class UsersDao {
 	}
 
 	//User Information Update
-	public void userUpdate(String U_id){
+	public void userUpdate(Users users){
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
 		try {
-			
+			re = session.getMapper(UsersMapper.class).userUpdate(users);
+			System.out.println(re);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			session.close();
 		}
 	}
+	
+	//checkPw for update information
+		public boolean checkPw(String u_id, String u_pwd){
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			Map<String, String>map = new HashMap<String, String>();
+			map.put("u_id", u_id);
+			map.put("u_pwd", u_pwd);
+			boolean result = false;
+			System.out.println(map.get("u_pwd"));
+			try {
+				re = session.getMapper(UsersMapper.class).checkPw(map);
+				System.out.println(re);
+				if(re>0){
+					result = true;
+				}else{
+					result = false;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				session.close();
+			}
+			
+			return result;
+		}
 	
 }
