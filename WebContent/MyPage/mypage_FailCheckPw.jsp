@@ -42,19 +42,13 @@
             
             </div><!-- e//tabs-list -->
             </div> <!-- present -->
-			<fieldset>
-					잘못된 비밀번호 입니다.<br><br>
-<!--          <input type = "submit" value = "돌아가기" class = "nlogin_btn">
- -->			</fieldset>
+			<fieldset id = "requestPW">
+					<div class = "requestPW">잘못된 비밀번호 입니다.<br>
+					비밀번호를 다시 확인해 주세요.</div><br><br>
+        <input type = "submit" value = "돌아가기" class = "nlogin_btn">
+ 			</fieldset>
 
-		<div class="back">
-                         <div class="button_base b03_skewed_slide_in">
-                             <div>돌아가기</div>
-                             <div></div>
-                             <div><button type="submit">돌아가기</button></div>
-                         </div>
-                     </div>
-		
+	
 		
 		</form>
 
