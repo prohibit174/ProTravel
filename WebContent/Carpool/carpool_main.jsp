@@ -2,7 +2,6 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
-
 <head>
     
 <%@include file="../header.jsp" %>
@@ -13,9 +12,8 @@
         <div class="present">
             <div class="tabs-list">
                 
-                <ul class="tabs-list">
-    
-		    		<li><a href="main.carpool" class="first-tag active"><span>CARPOOL</span></a></li>
+				<ul class="tabs-list">
+		   			<li><a href="main.carpool" class="first-tag active"><span>CARPOOL</span></a></li>
 		            <li><a class="Carpool_Enrollment"><span>카풀 등록</span></a></li>     
 		            <li><a href="list.carpool" data-id="2d8eef384cefda06" class=""><span>대기중인 카풀 리스트</span></a></li>
 		            <li><a class="My_Carpool"><span>내 카풀 등록 조회</span></a></li>
@@ -39,6 +37,19 @@
             
             </div><!-- e//tabs-list -->
 
+<div class="slideshow">
+    <div class="slideshow-slides">
+        <a href="./" class="slide" id="slide-1"><img src="${pageContext.request.contextPath}/images/img/jiwoong1.jpg" alt="" width="1600" height="465"></a>
+        <a href="./" class="slide" id="slide-2"><img src="${pageContext.request.contextPath}/images/img/jiwoong2.jpg" alt="" width="1300" height="465"></a>
+        <a href="./" class="slide" id="slide-3"><img src="${pageContext.request.contextPath}/images/img/jiwoong3.png" alt="" width="1300" height="465"></a>
+        <a href="./" class="slide" id="slide-4"><img src="${pageContext.request.contextPath}/images/img/slide-4.jpg" alt="" width="1600" height="465"></a>
+    </div>
+    <div class="slideshow-nav">
+        <a href="#" class="prev">Prev</a>
+        <a href="#" class="next">Next</a>
+    </div>
+    <div class="slideshow-indicator"></div>
+</div>
 
             </div>
 

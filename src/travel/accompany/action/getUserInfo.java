@@ -10,14 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import travel.accompany.model.Accompany;
 import travel.accompany.model.AccompanyDao;
 
-public class selectUserRoute implements Action {
+public class getUserInfo implements Action {
 	
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
 		AccompanyDao dao = AccompanyDao.getInstance();
 		
 		
-		List<Accompany> list = dao.selectUserRoute("0");
+		
+		
+		List<Accompany> list = dao.getUserInfo("0");
 		//request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();
