@@ -72,7 +72,7 @@ public class insertAction implements Action{
 		dao.insertProduct(product);
 		
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 		forward.setPath("ProductDeal/product_registerOk.jsp");
 	
 		
