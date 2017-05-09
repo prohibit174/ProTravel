@@ -17,7 +17,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?ver20170508">
 
 
 <head>
@@ -29,7 +29,7 @@
 
 <br>
 	<div class="form_body">
-		<form class="join_form" method="post" action="UpdateUserAction.mypage">
+		<form class="join_form" method="post" action="CheckPw.mypage">
 		        <div class="present">
             <div class="tabs-list">
                 
@@ -151,10 +151,20 @@
 					</tbody>
 				</table>
 			</fieldset>
+			<br><br>
 
 		<div class="nlogin_join_center">
 		<button type = "submit" class = "nlogin_btn">수정하기</button>	 
-		</div>
+		</div> 
+		<!-- <div class="back">
+				<div class="button_base b03_skewed_slide_in">
+					<div>수정하기</div>
+					<div></div>
+					<div>
+						<button type="submit">수정하기</button>
+					</div>
+				</div>
+			</div> -->
 		
 		
 		</form>

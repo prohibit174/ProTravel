@@ -57,6 +57,44 @@ function btn_js_accept_click(URL){
             
             </div><!-- e//tabs-list -->
             </div> <!-- present -->
+            <!-- 수락 목록 -->
+            
+            			<fieldset>
+				<legend>물품 교환 수락 목록</legend>
+				
+            <table class="primary_table">
+            <tr>
+            <th>거래번호</th>
+            <th>아이디</th>
+            <th>상품번호</th>
+            <th>수락여부</th>
+            <th>장소</th>
+            <th>시간</th> 
+            <th>취소</th> 
+
+            </tr>
+	<c:forEach var="product_acc" items="${list_o}">
+      <tr height="30">
+        <td align="center" >${product_acc.pr_reqnum }</td>
+         <td align="center">${product_acc.u_id }</td>
+         <td align="center">${product_acc.p_num }</td>
+         <td align="center">${product_acc.pr_ox }</td>
+         <td align="center">${product_acc.pr_place }</td>
+         <td align="center">${product_acc.pr_date }</td>
+         
+        <td align="center"><input type="button" value="취소" class="nlogin_btn"></td>
+
+         </tr>
+         </c:forEach>
+      </table>
+       <c:if test="${empty list_o}">
+			수락 목록이 없습니다.
+		</c:if>
+			</fieldset>
+            
+            
+            
+            <!-- 요청 목록 -->
 			<fieldset>
 				<legend>물품 교환 요청 목록</legend>
 				
@@ -71,7 +109,11 @@ function btn_js_accept_click(URL){
             <th>수락</th> 
             <th>거절</th> 
             </tr>
+            
+
+		
 	<c:forEach var="product_req" items="${list}">
+	
       <tr height="30">
         <td align="center" >${product_req.pr_reqnum }</td>
          <td align="center">${product_req.u_id }</td>
@@ -85,6 +127,9 @@ function btn_js_accept_click(URL){
          </tr>
          </c:forEach>
       </table>
+        <c:if test="${empty list}">
+			요청 목록이 없습니다.
+		</c:if>
 			</fieldset>
 
 		</form>
