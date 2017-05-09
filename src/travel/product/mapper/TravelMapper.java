@@ -15,7 +15,7 @@ public interface TravelMapper {
 	Product detailProduct(String p_num);
 	int updateProduct(Product product);
 	int deleteProduct(Product product);
-	Product_Request detailProductReq(String p_num);
+	Product_Request detailProductReq(String pr_reqnum);
 	int insertProductReq(Product_Request proReq);
 	List<Product> listProduct(RowBounds rowBounds, Product_Search proSearch);
 	List<Product_Request> listProductRequest(String u_id);

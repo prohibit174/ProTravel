@@ -100,10 +100,9 @@ System.out.println("allAccompanyList.size : " +allAccompanyList.size());
             <div class="tabs-list">
                 
                 <ul class="tabs-list">
-            <li><a href="main.carpool" class="first-tag active"><span>CARPOOL</span></a></li>
-            <li><a class="Carpool_Enrollment"><span>카풀 등록</span></a></li>     
-            <li><a href="list.carpool" data-id="2d8eef384cefda06" class=""><span>대기중인 카풀 리스트</span></a></li>
-            <li><a class="My_Carpool"><span>내 카풀 등록 조회</span></a></li>
+            <li><a href="main.accompany" class="first-tag active"><span>Accompany</span></a></li>
+            <li><a class="accomp_createRoute"><span>여행 일정 등록</span></a></li>     
+            <li><a href="list.carpool" data-id="2d8eef384cefda06" class=""><span>동행 검색</span></a></li>
             
 		</ul>
 

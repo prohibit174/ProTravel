@@ -23,7 +23,7 @@
 확인하기 하려면 입력하고나서 p_num 보내주고 여기서 받아야함. 
 </h4>
   <div class="btn-box center">
-            <a class="btn-more" href="mainAction.product"><span>메인으로 가기</span> </a>
+            <a class="btn-more" href="listAction.product"><span>메인으로 가기</span> </a>
             <a class="btn-more" href="listAction.product"><span>확인하기</span></a>
   </div>
 <%@include file="../footer.jsp" %>
