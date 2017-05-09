@@ -94,7 +94,7 @@
          					<td align="center">${carpool_Request.c_num }</td>
          					<td align="center">${carpool_Request.cr_ox }</td>
          					<td align="center">${carpool_Request.u_id}</td>
-         					<td align="center"><input type="button" value="취소" onclick="location.href='carpoolDelete.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
+         					<td align="center"><input type="button" value="취소" onclick="location.href='carpoolRequestDelete.mypage?cr_num=${carpool_Request.cr_num } '" class="nlogin_btn"></td>
          
          </tr>
          </c:forEach>

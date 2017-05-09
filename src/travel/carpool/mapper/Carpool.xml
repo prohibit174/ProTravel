@@ -67,8 +67,18 @@
 	
 	<!--  성사 --> 
 	<insert id= "insertCarpool_Request" parameterType="Carpool_Request">
-		insert into TEST1 VALUES(#{cr_num},, 'x', #{c_num}, #{u_id})
+		insert into TEST1 VALUES(#{cr_num}, 'x', #{c_num}, #{u_id})
 	</insert>
+	
+	<select id = "detailCarpool_Request" parameterType="String" resultType="Carpool_Request">
+		select * from test1 
+		where cr_num = #{cr_num}
+	</select>
+	
+	<delete id = "deleteCarpool_Request" parameterType="Carpool_Request">
+		delete from test1
+		where cr_num = #{cr_num}
+	</delete>
 	
 	<select id="carpool_Request_num" resultType="integer">
 	select max(cr_num) from TEST1

@@ -17,6 +17,9 @@ public class InsertAction implements Action {
 		CarpoolDao dao = CarpoolDao.getInstance();
 		Carpool carpool = new Carpool();
 		HttpSession session = request.getSession();
+		
+		int person = Integer.parseInt(request.getParameter("c_person"));
+		
 		carpool.setC_num(dao.carpool_num() + 1);
 		carpool.setU_id((String)session.getAttribute("member_id"));
 		System.out.println((String)session.getAttribute("member_id"));
@@ -24,7 +27,7 @@ public class InsertAction implements Action {
 		carpool.setStart_longti(request.getParameter("start_longti"));
 		carpool.setDest_lati(request.getParameter("dest_lati"));
 		carpool.setDest_longti(request.getParameter("dest_longti"));
-		carpool.setC_person(request.getParameter("c_person"));
+		carpool.setC_person(person);
 		
 		dao.insertCarpool(carpool);
 		

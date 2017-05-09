@@ -21,4 +21,7 @@ public interface CarpoolMapper {
 	List<Carpool>myMakeCarpool(String u_id);
 	List<Carpool_Request>myRequestCarpool(String u_id);
 	int updatePerson(Carpool carpool);
+	
+	int deleteCarpool_Request(Carpool_Request carpool_request);
+	Carpool_Request detailCarpool_Request(String cr_num);
 }

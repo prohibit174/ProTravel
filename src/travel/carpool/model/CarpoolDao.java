@@ -151,6 +151,35 @@ public class CarpoolDao {
 		}
 	}
 	
+	public Carpool_Request detailCarpool_Request(String cr_num) throws Exception{
+		SqlSession session = getSqlSessionFactory().openSession();
+		try{
+			return session.getMapper(CarpoolMapper.class).detailCarpool_Request(cr_num);
+		} catch(Exception e){
+			e.printStackTrace();
+			return null;
+		} finally{
+			session.close();
+		}
+	}
+	
+	public void deleteCarpool_Request(Carpool_Request carpool_request) throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CarpoolMapper.class).deleteCarpool_Request(carpool_request);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+	}
+	
 	public List<Carpool> myMakeCarpool(String u_id) throws Exception{
 		SqlSession session = getSqlSessionFactory().openSession();
 		try{

@@ -13,6 +13,7 @@ import travel.mypage.action.Action;
 import travel.mypage.action.ActionForward;
 import travel.mypage.action.CarpoolDeleteAction;
 import travel.mypage.action.CarpoolListAction;
+import travel.mypage.action.CarpoolRequestDeleteAction;
 import travel.mypage.action.CarpoolUpdateAction;
 import travel.mypage.action.CarpoolUpdateAction2;
 import travel.mypage.action.CheckPwAction;
@@ -130,11 +131,14 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if (command.equals("carpoolRequestDelete.mypage")) {
+			action = new CarpoolRequestDeleteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-       
-    
-       
-       
        
        if(forward !=null){
           if(forward.isRedirect()){
