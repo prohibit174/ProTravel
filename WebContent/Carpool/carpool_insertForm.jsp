@@ -330,7 +330,7 @@ String id =(String)session.getAttribute("member_id");
 						</div>
 						
 						<div class="nlogin_join_center">
-							<button class="nlogin_btn" type="submit">카풀 등록</button>
+							<button class="nlogin_btn" type="submit">SIGN UP</button>
 					    </div>
 </form>					
 
@@ -568,8 +568,7 @@ String id =(String)session.getAttribute("member_id");
     }/* ------------------------initMap() 종료 --------------------------------------------------------*/
 
 	/* 지도 좌표 정보 ajax */
-
-
+	
 
     </script>
     <script async defer
