@@ -26,8 +26,7 @@ public class ProductRequestListAction implements Action {
 		
 		List<Product_Request> list_o = dao.listProductAccept(u_id);
 		request.setAttribute("list_o", list_o);
-		
-		System.out.println(list_o.get(0).getPr_reqnum());
+	
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
