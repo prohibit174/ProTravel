@@ -55,6 +55,12 @@
 	
 	<select id="listProductRequest" resultType="Product_Request" parameterType="String">
 		select * from product_req where p_num IN (select p_num from product where u_id = #{u_id})
+		AND pr_ox='x'
+	</select>
+	
+	<select id="listProductAccept" resultType="Product_Request" parameterType="String">
+		select * from product_req where p_num IN (select p_num from product where u_id = #{u_id})
+		AND pr_ox='o'
 	</select>
 	
 
@@ -76,10 +82,7 @@
         WHERE pr_reqnum = #{pr_reqnum}
    </update>
    
-   <select id="listNotAceept" resultType="Product_Request">
-      select * from product_req
-      where pr_ox ='x'
-   </select>
+
 	
 	
 </mapper>
