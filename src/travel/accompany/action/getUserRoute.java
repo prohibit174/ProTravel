@@ -16,15 +16,16 @@ public class getUserRoute implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
 		AccompanyDao dao = AccompanyDao.getInstance();
+		String id =(String)request.getSession().getAttribute("member_id");
 		
 		Route route=new Route();
-		route.setU_id("0");
+		route.setU_id(id);
 		List<Accompany> list = dao.getUserRoute(route);
 		//request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("Accomp_main2.jsp");
+		forward.setPath("Accomp_main.jsp");
 		
 		return forward;
 	}

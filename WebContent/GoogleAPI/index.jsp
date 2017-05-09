@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-<link rel='stylesheet' href='fullcalendar.css' />
-<script src='lib/jquery.min.js'></script>
-<script src='lib/moment.min.js'></script>
+  <%@include file="../header.jsp" %>
+<link rel='stylesheet' href='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.css' />
+<%-- <script src='${pageContext.request.contextPath}/GoogleAPI/lib/jquery.min.js'></script> --%>
+<script src='${pageContext.request.contextPath}/GoogleAPI/lib/moment.min.js'></script>
 <!-- <script src='jquery-ui.js'></script>
 <script src='jquery-ui.min.js'></script> -->
-<script src='fullcalendar.js'></script>
+<script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
 
     <style>
        #map {
@@ -19,8 +20,9 @@
        }
     </style>
   </head>
-  
+    
   <body>
+
     <div id="map"></div>
     <div id='calendar'></div>
     
@@ -66,8 +68,9 @@
               createLine(latLngList, map);
               
               collectEvent();
-              jsonEncode = JSON.stringify(allEvent);
-              obj.value = jsonEncode;  
+                jsonEncode = JSON.stringify(allEvent);
+               obj.value = jsonEncode;
+               console.log(obj);
              }
             
          };  //collectEventForLine End
@@ -87,8 +90,8 @@
                     var edate = new moment(cal[i].end).format("YYYY-MM-DD");
                     var newEndDate = moment(edate);
                     
-                    var duration = moment.duration(newDate.diff(newEndDate));   //ì°¨ì ´ê° 
-                   var durationdays = (-duration.asDays());      //ì°¨ì ´ê°  ì ¼ë¡  í  ì ° ë  ì§  
+                    var duration = moment.duration(newDate.diff(newEndDate));   //ì°¨ï¿½ ï¿½ï¿½ 
+                   var durationdays = (-duration.asDays());      //ì°¨ï¿½ ï¿½ï¿½  ï¿½ ï¿½ï¿½  ï¿½  ï¿½ ï¿½ ï¿½ ï¿½ï¿½  
                    
                     for(var a=0; a < durationdays;a++){
                       allEvent.push(new storeEvent(0 ,cal[i].title, moment(valDate).format("YYYY-MM-DD")));
@@ -98,8 +101,8 @@
          /*   for(var b=0; b < allEvent.length; b++){
               alert(allEvent[b].title + allEvent[b].eventdate);
            } */
-           jsonEncode = JSON.stringify(allEvent);
-           obj.value = jsonEncode;
+       /*     jsonEncode = JSON.stringify(allEvent);
+           obj.value = jsonEncode; */
               
        } //collectEvent method End
        
@@ -142,8 +145,8 @@
          } 
           
        
-     /* Calendar ÃªÂ´Â Ã«Â Â¨ Ã«Â³Â Ã¬Â Â  */  
-      var todayDate = new Date(); //Ã Â Â Ã¬Â Â¬ Ã«Â Â Ã¬Â§Â 
+     /* Calendar ÃªÂ´ï¿½ Ã«Â Â¨ Ã«Â³ï¿½ Ã¬ï¿½ ï¿½  */  
+      var todayDate = new Date(); //ï¿½ ï¿½ ï¿½ Ã¬ï¿½ Â¬ Ã«ï¿½ Â Ã¬Â§ï¿½ 
       var currentDate=new Date();      
       
       var calEventColor=[];
@@ -172,58 +175,58 @@
         var bernLocation = {lat: 46.95, lng: 7.45};
         var zurichLocation = {lat: 47.366667, lng: 8.55};
         
-         marker_zoom4[0] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+         marker_zoom4[0] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: franceLocation,
             map: map,
             title:'France'
           });
-       marker_zoom4[1] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom4[1] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: belgiumLocation,
             map: map,
-            title:'Belguim'
+            title:'Belgium'
           });
-       marker_zoom4[2] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom4[2] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: germanyLocation,
             map: map,
             title:'Germany'
           });
-       marker_zoom4[3] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom4[3] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: swissLocation,
             map: map,
             title:'Swiss'
          });
        
-        marker_zoom5[0] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+        marker_zoom5[0] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: parisLocation,
             map: map,
             title:'Paris'
           });
-       marker_zoom5[1] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[1] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: niceLocation,
             map: map,
             title:'Nice'
           });
-       marker_zoom5[2] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[2] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: brusselsLocation,
             map: map,
             title:'Brussels'
           });
-       marker_zoom5[3] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[3] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: berlinLocation,
             map: map,
             title:'Berlin'
           });
-       marker_zoom5[4] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[4] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: munichLocation,
             map: map,
             title:'Munich'
           });
-       marker_zoom5[5] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[5] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: bernLocation,
             map: map,
             title:'Bern'
           });
-       marker_zoom5[6] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[6] = new google.maps.Marker({//ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â§ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â»ï¿½ ï¿½ ï¿½ Â¤ï¿½ ï¿½ ï¿½ Â«ï¿½ ï¿½ ï¿½ Â¥ï¿½ ï¿½ ï¿½ Â¼ uluruï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½ ï¿½ Â°ï¿½ ï¿½  ï¿½ ï¿½ ï¿½ Â¬ï¿½ ï¿½  ï¿½ ï¿½  
             position: zurichLocation,
             map: map,
             title:'Zurich'
@@ -279,7 +282,7 @@
           });
         
         
-        /* marker_zoom4 Ã Â Â´Ã«Â¦Â  Ã¬Â Â´Ã«Â²Â¤Ã Â Â¸*/
+        /* marker_zoom4 ï¿½ ï¿½ Â´Ã«Â¦ï¿½  Ã¬ï¿½ Â´Ã«Â²Â¤ï¿½ ï¿½ Â¸*/
         for(i=0;i<marker_zoom4.length;i++)
        {
           marker_zoom4[i].addListener('click', function() {
@@ -325,7 +328,7 @@
                });   //click event end
 
        }
-        /* marker_zoom5 Ã Â Â´Ã«Â¦Â  Ã¬Â Â´Ã«Â²Â¤Ã Â Â¸*/
+        /* marker_zoom5 ï¿½ ï¿½ Â´Ã«Â¦ï¿½  Ã¬ï¿½ Â´Ã«Â²Â¤ï¿½ ï¿½ Â¸*/
             for(i=0;i<marker_zoom5.length;i++)
        {
           marker_zoom5[i].addListener('click', function() {
@@ -402,7 +405,7 @@
     
     
        /* ------------------------initMap() start --------------------------------------------------------*/
-      /* ------------------------Calendar ÃªÂ´Â Ã«Â Â¨ Ã¬Â Â¤Ã Â Â¸Ã«Â¦Â½Ã Â Â¸ Ã¬Â Â Ã¬Â Â  ------------------------------------------------*/
+      /* ------------------------Calendar ÃªÂ´ï¿½ Ã«Â Â¨ Ã¬ï¿½ Â¤ï¿½ ï¿½ Â¸Ã«Â¦Â½ï¿½ ï¿½ Â¸ Ã¬ï¿½ ï¿½ Ã¬ï¿½ ï¿½  ------------------------------------------------*/
       
    
       
@@ -454,16 +457,10 @@
                 },
        });
    });
-    
 
-        
-
-        
-
-        
-        window.onload = function() {      
-           obj = document.getElementById('json'); 
-        } 
+        $( document).ready(function() {
+        	obj = document.getElementById('json'); 
+        });   
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnrWQ2SHvedNrvdozheYo32pHwCbuvPgs&callback=initMap">
@@ -475,4 +472,5 @@
    </form>
    
   </body>
+  <%@include file="../footer.jsp" %>
 </html>

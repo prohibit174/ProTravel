@@ -1,24 +1,26 @@
 package travel.carpool.model;
 
-public class Carpool_Request {
+import java.io.Serializable;
+
+public class Carpool_Request implements Serializable {
 	
-	private String cr_num;
+	private int cr_num;
 	private String cr_ox;
 	private String c_num;
 	private String u_id;
 	
 	public Carpool_Request(){}
-	public Carpool_Request(String cr_num, String cr_ox, String c_num, String u_id) {
+	public Carpool_Request(int cr_num, String cr_ox, String c_num, String u_id) {
 		super();
 		this.cr_num = cr_num;
 		this.cr_ox = cr_ox;
 		this.c_num = c_num;
 		this.u_id = u_id;
 	}
-	public String getCr_num() {
+	public int getCr_num() {
 		return cr_num;
 	}
-	public void setCr_num(String cr_num) {
+	public void setCr_num(int cr_num) {
 		this.cr_num = cr_num;
 	}
 	public String getCr_ox() {

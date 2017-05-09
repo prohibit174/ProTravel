@@ -4,13 +4,13 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 
-String p_num=request.getParameter("p_num");
-System.out.println(p_num);
+String pr_reqnum=request.getParameter("pr_reqnum");
+System.out.println(pr_reqnum);
 ProductDao dao = ProductDao.getInstance();
 
 
-Product_Request productReq=dao.detailProductReq(p_num);
-System.out.println(productReq.getP_num());
+Product_Request productReq=dao.detailProductReq(pr_reqnum);
+System.out.println(productReq.getPr_reqnum());
 
 
 

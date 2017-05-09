@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170508">
 <script src = "//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/UpdateInfo.js?ver=20170508"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/UpdateInfo.js?ver=20170509"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
 
 <head>
@@ -127,7 +127,7 @@
 					<tr>
 					<th scope = "row">거주 지역</th>
 					<td>
-					 <input type = "text" name = "u_address" placeholder="필수항목 입니다.">	
+					 <input type = "text" name = "u_address" id = "u_address" placeholder="필수항목 입니다.">	
 					</td>
 					</tr>
 
@@ -160,13 +160,13 @@
 
 					<tr>
 						<th scope="row">여행 스타일</th>
-						<td><input type="checkbox" name="u_style" value="healing"
+						<td><input type="radio" name="u_style" value="healing"
 							checked="checked"> <label>&nbsp;힐링</label>&nbsp;&nbsp; <input
-							type="checkbox" name="u_style" value="tour"> <label>&nbsp;관광</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="eat"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="activity"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="rest"> <label>&nbsp;휴양</label>
-							<span>하나만 선택해주세요</span></td>
+							type="radio" name="u_style" value="tour"> <label>&nbsp;관광</label>&nbsp;&nbsp;
+							<input type="radio" name="u_style" value="eat"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
+							<input type="radio" name="u_style" value="activity"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
+							<input type="radio" name="u_style" value="rest"> <label>&nbsp;휴양</label>
+							<!-- <span>하나만 선택해주세요</span> --></td>
 					</tr>
 
 					<!-- <tr>
@@ -182,16 +182,6 @@
 		<button type = "submit" class = "nlogin_btn">수정완료</button>
 		</div>
 		
-		 
-			<!-- <div class="back">
-				<div class="button_base b03_skewed_slide_in">
-					<div>수정완료</div>
-					<div></div>
-					<div>
-						<button type="submit">수정완료</button>
-					</div>
-				</div>
-			</div> -->
 		</form>
 
 

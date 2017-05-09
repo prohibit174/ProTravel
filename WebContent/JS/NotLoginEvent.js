@@ -20,7 +20,17 @@ $(function() {
 		if ($('.btn-new-plan').text() === "로그인") {
 			alert('로그인이 필요합니다');
 		} else {
-			location.href = "main.mypage";
+			location.href = "carpoolCheck.mypage";
 		}
 	});
+	
+	$('.accomp_createRoute').on('click', function() {
+		if ($('.btn-new-plan').text() === "로그인") {
+			alert('로그인이 필요합니다');
+		} else {
+			location.href = "accomp_createRoute.accompany";
+		}
+	});
+	
+	
 });

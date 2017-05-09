@@ -1,27 +1,22 @@
 package travel.accompany.action;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import travel.accompany.model.Accompany;
-import travel.accompany.model.AccompanyDao;
-import travel.accompany.model.Route;
+public class accomp_createRoute implements Action {
 
-public class accomp_main implements Action {
-	
+	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
+		// TODO Auto-generated method stub
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("Accompany/Accomp_main.jsp");
+		forward.setPath("GoogleAPI/index.jsp");
 		
 		return forward;
 	}
 
 }
-
-

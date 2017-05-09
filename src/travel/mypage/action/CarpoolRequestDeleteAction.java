@@ -1,29 +1,27 @@
 package travel.mypage.action;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import travel.carpool.model.Carpool;
+
 import travel.carpool.model.CarpoolDao;
 import travel.carpool.model.Carpool_Request;
-import travel.carpool.model.Search;
 
-public class CarpoolDeleteAction implements Action {
+public class CarpoolRequestDeleteAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
-		
-		String c_num = request.getParameter("c_num");
+		String cr_num = request.getParameter("cr_num");
+		System.out.println(cr_num);
 
 		CarpoolDao dao = CarpoolDao.getInstance();
-		Carpool carpool = dao.detailCarpool(c_num);
+		Carpool_Request carpool_request = dao.detailCarpool_Request(cr_num);
 		
-		dao.deleteCarpool(carpool);
+		dao.deleteCarpool_Request(carpool_request);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);

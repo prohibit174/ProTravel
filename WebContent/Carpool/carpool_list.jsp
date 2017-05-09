@@ -133,7 +133,7 @@ function applyLink(URL){
 										<span>경유지 : ${carpool.way_point }</span>
 									</p>
 									<p>
-										<span>가격 : ${carpool.c_person}</span>
+										<span>가격 : ${carpool.c_price}</span>
 									</p>
 									<p>
 										<span>남은좌석 ${carpool.c_person}</span>

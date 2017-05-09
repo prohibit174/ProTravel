@@ -15,12 +15,13 @@ public class CarpoolUpdateAction2 implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
 		
+		int person = Integer.parseInt(request.getParameter("c_person"));
+		
 		String num = request.getParameter("c_num");
 		String start_longti = request.getParameter("start_longti");
 		String start_lati = request.getParameter("start_lati");
 		String dest_longti = request.getParameter("dest_longti");
 		String dest_lati = request.getParameter("dest_lati");
-		String c_person = request.getParameter("c_person");
 		
 
 		CarpoolDao dao = CarpoolDao.getInstance();
@@ -31,7 +32,7 @@ public class CarpoolUpdateAction2 implements Action {
 		carpool.setStart_lati(start_lati);
 		carpool.setStart_longti(start_longti);
 		carpool.setDest_lati(dest_lati);
-		carpool.setC_person(c_person);
+		carpool.setC_person(person);
 		
 		dao.updateCarpool(carpool);
 		

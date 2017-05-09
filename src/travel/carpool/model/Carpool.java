@@ -16,12 +16,13 @@ public class Carpool implements Serializable {
 	private int c_date;
 	private int c_hour;
 	private int c_minute;
-	
+
 	
 	public Carpool(){}
 
 	public Carpool(int c_num, String u_id, String start_point, String dest_point, String way_point, int c_price,
 			int c_person, int c_year, int c_month, int c_date, int c_hour, int c_minute) {
+
 		super();
 		this.c_num = c_num;
 		this.u_id = u_id;
@@ -133,6 +134,7 @@ public class Carpool implements Serializable {
 		this.c_minute = c_minute;
 	}
 
+	
 
 	
 }

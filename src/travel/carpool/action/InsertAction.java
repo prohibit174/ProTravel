@@ -20,7 +20,6 @@ public class InsertAction implements Action {
 		
 		carpool.setC_num(dao.carpool_num() + 1);
 		carpool.setU_id((String)session.getAttribute("member_id"));
-		System.out.println(request.getParameter("start_point"));
 		carpool.setStart_point(request.getParameter("start_point"));
 		carpool.setDest_point(request.getParameter("dest_point"));
 		carpool.setWay_point(request.getParameter("way_point"));
@@ -31,8 +30,6 @@ public class InsertAction implements Action {
 		carpool.setC_date(Integer.parseInt(request.getParameter("c_date")));
 		carpool.setC_hour(Integer.parseInt(request.getParameter("c_hour")));
 		carpool.setC_minute(Integer.parseInt(request.getParameter("c_minute")));
-		
-
 		
 		
 		dao.insertCarpool(carpool);

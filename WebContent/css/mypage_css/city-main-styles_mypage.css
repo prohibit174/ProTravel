@@ -20,19 +20,20 @@
 
 .join_form th{
 	padding: 8px;
-	padding-right: 20px;
+	padding-right: 10px;
 	width: 109px;
 }
 
 .join_form td{
 	padding: 8px;
-	padding-right: 20px;
+	padding-right: 15px;
 }
 
 form{ margin-top:29px; margin-bottom: 5%}
 form:after{ content:""; display:block; clear:both; *zoom:1}
 form legend{ display:block; width:70%; margin:0; padding-bottom:8px; font-size:18px; font-weight:600; color: #ff8000; border-bottom:2px solid #ff8000}
 
+#requestPW > .requestPW{font-size: 18px;}
 
 .body						{ position:relative; z-index:50; margin:0 auto; width:1091px; padding:42px 20px 100px 20px}
 .body_wide					{ position:relative; z-index:50; margin:0 auto; width:1460px; padding:42px 20px 100px 20px}
