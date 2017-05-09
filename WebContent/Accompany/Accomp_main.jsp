@@ -11,11 +11,11 @@
 <% 
 String id =(String)session.getAttribute("member_id");
 
-System.out.println(request.getContextPath());
+/* System.out.println(request.getContextPath()); */
 AccompanyDao dao = AccompanyDao.getInstance();
 	//get user's route whose ID is "0"
 Route route=new Route();
-route.setU_id("0");
+route.setU_id(id);
 List<Accompany> list = dao.getUserRoute(route);
 request.setAttribute("list", list);
 	//get user's Info whose ID is "0"
@@ -37,7 +37,7 @@ for(int i=0;i< list.size() ;i++)
 	  String name=userRoutesInfo.get(i).getU_name();
 	  String region=userRoutesInfo.get(i).getCor_region();
 	  String date=userRoutesInfo.get(i).getTp_date();
-	  System.out.println(date+"의 "+region);
+	  System.out.println(i+"번째"+date+"의 "+region);
 	    System.out.println();
 
 	  //List<Accompany> temp=dao.findAccompany(userRoutesInfo.get(i));
@@ -121,9 +121,9 @@ System.out.println("allAccompanyList.size : " +allAccompanyList.size());
                 </div>
             
             </div><!-- e//tabs-list -->
-<form action="insertAction.carpool" method="post">	
+<form action="" method="post">	
     <div id="carpool_map">
-    	<h3 id="carpool_title">카풀의 출발지와 목적지를 마크 하세요</h3>
+    	<h3 id="carpool_title">추천 동행인</h3>
     	<br>
     	<div id="map"></div>
     	
