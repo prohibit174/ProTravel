@@ -115,7 +115,7 @@ public class ProductController extends HttpServlet {
 		            e.printStackTrace();
 		         }
 	       }
-	       else if(command.equals("insertReqForm.product")){ 
+	       else if(command.equals("insertReqFormAction.product")){ 
 		          action = new InsertReqFormAction();
 		          try {
 		            forward = action.execute(request, response);   

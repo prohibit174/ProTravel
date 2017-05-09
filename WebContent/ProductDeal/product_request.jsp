@@ -1,7 +1,24 @@
+<%@page import="travel.product.model.Product"%>
 <%@page import="travel.product.model.Product_Request"%>
 <%@page import="travel.product.model.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("utf-8"); %>
+<% request.setCharacterEncoding("utf-8"); 
+
+	String u_id = session.getAttribute("member_id").toString();
+	
+	request.setAttribute("u_id", u_id);
+	
+	String p_num = request.getParameter("p_num");
+	
+	System.out.println(p_num);
+	ProductDao dao = ProductDao.getInstance();
+	
+	Product product = dao.detailProduct(p_num);
+	
+	request.setAttribute("product", product);
+
+
+%>
 
 
 
@@ -27,7 +44,7 @@
                 
                 <ul class="tabs-list">
     
-        <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
+        <li><a href="listAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
             <li><a href="insertForm.product"><span>물품 등록</span></a></li>
@@ -75,19 +92,19 @@
 					<tr>
 					<th scope="row">회원ID</th>
 					<td>
-					<input type = "text" id = "u_id" name="u_id">
+					<input type = "text" id = "u_id" name="u_id" value="${u_id }">
 					</tr>
 					
 					<tr>
 					<th scope="row">물품번호</th>
 					<td>
-					<input type = "text" id = "p_num" name="p_num">
+					<input type = "text" id = "p_num" name="p_num" value="${product.p_num }">
 					</tr>
 					
 					<tr>
 					<th scope="row">수락여부</th>
 					<td>
-					<input type = "text" id = "pr_ox" name="pr_ox">
+					<input type = "text" id = "pr_ox" name="pr_ox" value="x">
 					</tr>
 					
 					<tr>
@@ -101,8 +118,6 @@
 					<td>
 					<input type = "text" id = "pr_date" name="pr_date">
 					</tr>
-					
-				
 					
 
 					</tbody>

@@ -14,8 +14,16 @@
 %>
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
+
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
+<style type="text/css">
+	#button_product{
+	color : white;
+	text-decoration: none;
+	}
+
+</style>
 <head>
 
 </head>
@@ -35,7 +43,7 @@
                 <ul class="tabs-list">
     
         
-        <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
+        <li><a href="listAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
             <li><a href="insertForm.product"><span>물품 등록</span></a></li>
@@ -126,17 +134,16 @@
 					</tbody>
 
 				</table>
+
 			</fieldset>
+			
+
 		 <div class="btn-box center">
 		<button type = "submit" class="btn-more">등록하기</button>
 		</div>
-			<!-- 
-		 <div class="btn-box center">
-                    
-                    <a class="btn-more" href="product_registerOk.jsp"><span>등록하기</span></a>
-                    
-                </div>
-                 -->
+		
+		
+		
 		</form>
 
 

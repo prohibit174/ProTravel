@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
 <mapper namespace="travel.product.mapper.TravelMapper">
 
 	<cache />
@@ -41,7 +40,7 @@
 	
 	<!--혜진 거래요청 insert, detail-->
 	<insert id="insertProductReq" parameterType="Product_Request">
-		insert into product_request(
+		insert into product_req(
 			pr_reqnum, u_id, p_num, pr_ox, pr_place, pr_date
 			)
 		values(
@@ -51,24 +50,36 @@
 	</insert>
 	
 	<select id="detailProductReq" resultType="Product_Request" parameterType="String">
-		select * from Product_Request where p_num=#{p_num}
+		select * from product_req where pr_reqnum=#{pr_reqnum}
 	</select>
+	
+	<select id="listProductRequest" resultType="Product_Request" parameterType="String">
+		select * from product_req where p_num IN (select p_num from product where u_id = #{u_id})
+	</select>
+	
+
+	<select id="countProduct" resultType="int" parameterType="Product_Search">
+		select count(*) from product	
+		<!-- Product list paging work -->
+		<if test="product_search !=null">
+				<where>
+					<!-- b_title, LIKE %자바% OR  b_writer LIKE %자바%-->
+					<foreach collection="product_search" item="item" separator="OR" open="(" close=")" >
+						${item} LIKE #{searchKey}
+					</foreach>
+				</where>
+			</if>
+	</select>
+	
+	<update id="updateAccept" parameterType="Product_Request">
+        UPDATE product_req SET pr_ox='o'
+        WHERE pr_reqnum = #{pr_reqnum}
+   </update>
+   
+   <select id="listNotAceept" resultType="Product_Request">
+      select * from product_req
+      where pr_ox ='x'
+   </select>
 	
 	
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

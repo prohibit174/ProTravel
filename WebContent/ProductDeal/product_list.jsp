@@ -40,7 +40,7 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
+            <li><a href="listAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
             <li><a href="insertForm.product"><span>물품 등록</span></a></li>
@@ -96,7 +96,7 @@
 
 
          
-         <c:forEach var="product" items="${list}">
+         <c:forEach var="product" items="${listModel.list}">
 <div data-id="6a341fddf4c819fc" class="content-box type01">
 	<a href = "detailAction.product?p_num=${product.p_num }" >
     <div class="type01">
@@ -132,14 +132,37 @@
  </c:forEach>
                     <div class="clear"></div>
                 </div>
-                <div class="btn-box center">
-                    <a class="btn-more" href="/city?serviceType=global&amp;tab=specialTip"><span>전체 물품</span> 더보기 </a>
-                </div>
             </div>
         </div>
     </div>
       
     <!-- boram end -->
+  <div id="paging">
+   
+   <!-- 이전 -->
+   <span id="page_back">
+   <c:if test="${listModel.startPage > 5 }">
+      <a href="listAction.product?pageNum=${listModel.startPage - 5}" >[이전]</a>
+   </c:if>
+   </span>
+   <!-- 페이지 목록 -->
+   <c:forEach var="pageNo" begin="${listModel.startPage}"
+      end="${listModel.endPage }">
+      <span id="page_number">
+      <c:if test="${listModel.requestPage == pageNo}"><b></c:if>
+      <a href="listAction.product?pageNum=${pageNo}" >[${pageNo}]</a>
+      <c:if test="${listModel.requestPage == pageNo}"></b></c:if>
+      </span>
+   </c:forEach>
+   
+   <!-- 이후 -->
+   <span id="page_front">
+   <c:if test="${listModel.endPage < listModel.totalPageCount}">
+      <a href="listAction.product?pageNum=${listModel.startPage + 5}">[이후]</a>   
+   </c:if>
+   </span>
+   </div><!-- paging end -->
+
 
               </div>
               <div class="clear"></div>

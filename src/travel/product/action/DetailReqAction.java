@@ -13,15 +13,14 @@ public class DetailReqAction implements Action {
 	
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
-		String p_num = request.getParameter("p_num");
+		String pr_reqnum = request.getParameter("pr_reqnum");
 		System.out.println("action in");
-		System.out.println(p_num);
+		System.out.println(pr_reqnum);
 		  
 		   
 		   ProductDao dao = ProductDao.getInstance();
-		   Product_Request productReq = dao.detailProductReq(p_num);
-		   System.out.println("°´Ã¼°ª");
-		   System.out.println(productReq.getP_num());
+		   Product_Request productReq = dao.detailProductReq(pr_reqnum);
+
 			ActionForward forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("ProductDeal/product_detailReq.jsp");

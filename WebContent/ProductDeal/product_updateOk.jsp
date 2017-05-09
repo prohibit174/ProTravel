@@ -36,7 +36,7 @@
 
   <div class="btn-box center">
  
-   			<a class="btn-more" href="mainAction.product"><span>메인으로 가기</span> </a>
+   			<a class="btn-more" href="listAction.product"><span>메인으로 가기</span> </a>
             <a class="btn-more" href="detailAction.product?p_num=${product.p_num}"><span>확인하기</span></a>
   </div>
 <%@include file="../footer.jsp" %>
