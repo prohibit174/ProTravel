@@ -109,7 +109,7 @@
     <div class="tabs-list">
         <ul id="menu_tab_list">
             <li><a href="home.main" >HOME</a></li>
-            <li><a data-tab="hotdeal" >동행</a></li>
+            <li><a href="main.accompany" >동행</a></li>
             <li><a href="main.carpool" >카풀</a></li>
             <li><a href="listAction.product" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>

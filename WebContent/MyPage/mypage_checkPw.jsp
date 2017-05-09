@@ -60,7 +60,11 @@
 				<!-- http://doublesprogramming.tistory.com/94 -->
 			</fieldset>
 
-			<div class="back">
+				
+				<div class="nlogin_join_center">
+		<button type = "submit" class = "nlogin_btn">수정하기</button>	 
+		</div> 
+			<!-- <div class="back">
 				<div class="button_base b03_skewed_slide_in">
 					<div>수정하기</div>
 					<div></div>
@@ -68,7 +72,7 @@
 						<button type="submit">수정하기</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 
 		</form>
