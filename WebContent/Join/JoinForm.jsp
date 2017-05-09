@@ -7,7 +7,7 @@
 <script src = "//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/IdCheck.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/CheckEssential.js?version=20170502"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/CheckEssential.js?version=20170509"></script>
 <!-- js 갱신시키기 : http://copyrightdj.tistory.com/162 -->
 <head>
     

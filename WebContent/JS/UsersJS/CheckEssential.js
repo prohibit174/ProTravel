@@ -9,6 +9,15 @@ $(function(){
 			alert('비밀번호를 확인 해주세요.');
 			$('#pwcheck').focus();
 			return false;
+		}else if($('#u_name').val()==""){
+			alert('닉네임을 설정해주세요');
+			return false;
+		}else if($('#u_birth').val()==""){
+			alert('생일을 입력해주세요.');
+			return false;			
+		}else if($('#u_address').val()==""){
+			alert('거주 지역을 입력해주세요.');
+			return false;			
 		}else if($('#law_agree').is(":checked")==false){
 			alert('이용 약관에 동의가 필요합니다.');
 			return false;

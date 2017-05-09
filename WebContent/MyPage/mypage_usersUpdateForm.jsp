@@ -13,7 +13,10 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170502">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170508">
+<script src = "//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/UpdateInfo.js?ver=20170508"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
 
 <head>
     
@@ -23,7 +26,7 @@
 <body>
 	<br>
 	<div class="form_body">
-		<form action="JoinAction.join" class="join_form">
+		<form action="ModifyUser.mypage" class="join_form">
 		        <div class="present">
             <div class="tabs-list">
                 
@@ -73,7 +76,7 @@
 					<tr>
 					<th scope="row">비밀번호</th>
 					<td>
-					<input type = "password" name = "u_pwd" id = "u_pwd">
+					<input type = "password" name = "u_pwd" id = "u_pwd" placeholder="필수 항목입니다.">
 					&nbsp;&nbsp;&nbsp;&nbsp;<span>알파벳과 숫자 조합으로 6~12자</span>
 					
 					
@@ -92,21 +95,21 @@
 					<tr>
 					<th scope="row">닉네임</th>
 					<td>
-					${users.u_name }
+					${user.u_name }
 					</td>
 					</tr>
 					
 					<tr>
 					<th scope = "row">생년월일</th>
 					<td>
-					${users.u_birth }
+					${user.u_birth }
 					</td>
 					</tr>
 					
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					${users.u_sex }
+					${user.u_sex }
 					</td>
 					</tr>
 					
@@ -124,7 +127,7 @@
 					<tr>
 					<th scope = "row">거주 지역</th>
 					<td>
-					 <input type = "text" name = "u_address">	
+					 <input type = "text" name = "u_address" placeholder="필수항목 입니다.">	
 					</td>
 					</tr>
 
@@ -132,7 +135,7 @@
 
 				</table>
 			</fieldset>
-
+			<br>
 			<fieldset>
 				<legend>선택 입력사항</legend>
 				<table>
@@ -166,19 +169,29 @@
 							<span>하나만 선택해주세요</span></td>
 					</tr>
 
-					<tr>
+					<!-- <tr>
 						<th scope="row">프로필 이미지</th>
 						<td><input type="file" name="u_img" id="u_img"></td>
-					</tr>
+					</tr> -->
 					</tbody>
 				</table>
 			</fieldset>
+			<br><br><br>
 
 		<div class="nlogin_join_center">
 		<button type = "submit" class = "nlogin_btn">수정완료</button>
 		</div>
 		
-		
+		 
+			<!-- <div class="back">
+				<div class="button_base b03_skewed_slide_in">
+					<div>수정완료</div>
+					<div></div>
+					<div>
+						<button type="submit">수정완료</button>
+					</div>
+				</div>
+			</div> -->
 		</form>
 
 
