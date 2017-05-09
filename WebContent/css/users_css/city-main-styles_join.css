@@ -48,7 +48,7 @@ h2.sub_title2 strong			{ font-size:13px; font-weight:normal; color:#999; letter-
 h2.cs_title					{ display:block; position:relative; width:100%; font-size:18px; color:#000; letter-spacing:-0.15em; line-height:22px; padding:6px 0 10px 0; border-bottom:2px solid #373737}
 
 .nlogin_btn {margin:0; padding:12px 32px; line-height:18px; background:#ff7f11; border:1px solid #e86e0f; font-size:18px; color:#fff; font-weight:bold; cursor:pointer}
-.nlogin_join_center {margin-top:30%; text-align:center;   margin-right: 40%; margin-left:50%; margin-bottom: 20px;}
+.nlogin_join_center {margin-top:30%; text-align:center;   margin-right: 41%;  margin-left:35%;  margin-bottom: 20px;}
 
 
 .nlogin_policy_wrap {display:inline-block; *display:inline; zoom:1; margin-top:30px; width:383px; margin-bottom: 15%;}

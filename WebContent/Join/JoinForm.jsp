@@ -45,7 +45,7 @@
 					</th>
 					<td>
 					<input type = "text" name = "u_id" id = "u_id">
-					&nbsp;&nbsp;&nbsp;&nbsp;<span>영문소문자 / 숫자, 4~16자</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span>영문소문자 / 숫자, 4~12자</span>
 			 		<input type = "button" id = "u_idcheck" value = "중복검사"> 
 					
 					</td>
@@ -123,7 +123,8 @@
 
 				</table>
 			</fieldset>
-
+			
+			<br>
 			<fieldset>
 				<legend>선택 입력사항</legend>
 				<table>
@@ -148,13 +149,13 @@
 
 					<tr>
 						<th scope="row">여행 스타일</th>
-						<td><input type="checkbox" name="u_style" value="힐링"
+						<td><input type="radio" name="u_style" value="힐링"
 							checked="checked"> <label>&nbsp;힐링</label>&nbsp;&nbsp; <input
-							type="checkbox" name="u_style" value="관광"> <label>&nbsp;관광</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="맛집"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="액티비티"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="휴양"> <label>&nbsp;휴양</label>
-							&nbsp;&nbsp;<span>하나만 선택해주세요</span></td>
+							type="radio" name="u_style" value="관광"> <label>&nbsp;관광</label>&nbsp;&nbsp;
+							<input type="radio" name="u_style" value="맛집"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
+							<input type="radio" name="u_style" value="액티비티"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
+							<input type="radio" name="u_style" value="휴양"> <label>&nbsp;휴양</label>
+							&nbsp;&nbsp;<!-- <span>하나만 선택해주세요</span> --></td>
 					</tr>
 
 					<tr>
@@ -174,7 +175,7 @@
 						<div class="fake_box"></div>
 						<div class="policy_content">
 							<p class="private_list_title">제1조[목적]</p>
-							<span>이서비스이용약관(이하“약관”이라합니다)은㈜투어팁스(이하“회사”라합니다)가제공하는
+							<span>이서비스이용약관(이하“약관”이라합니다)은㈜프로동행러(이하“회사”라합니다)가제공하는
 								서비스와관련하여회사와회원간에서비스의이용조건및절차, 회사와회원간의권리, 의무및책임사항기타
 								필요한사항을규정함을목적으로합니다.</span>
 							<p class="private_list_title">제2조[용어의정의]</p>
@@ -309,7 +310,7 @@
 							<ol>
 								<li>회사는회원에게아래와같은서비스를제공합니다.
 									<ol>
-										<li>투어팁스: 정보또는자료의관리/저장/공유를위한여행관련정보서비스</li>
+										<li>프로동행러: 정보또는자료의관리/저장/공유를위한여행관련정보서비스</li>
 										<li>기타회사가추가개발하거나다른회사와의제휴계약등을통해회원에게제공하는일체의서비스
 											(기존서비스를활용하기위한API서비스등포함)</li>
 										<li>직접판매하는재화또는용역등에대한정보제공및계약의체결및계약이체결된재화또는 용역등의배송</li>
@@ -529,7 +530,7 @@
 					</div>
 					<div class="policy_content_wrap">
 						<div class="policy_content">
-							<p class="private_policy_title">투어팁스는아래의목적으로개인정보를수집및 이용하며,
+							<p class="private_policy_title">프로동행러는아래의목적으로개인정보를수집및 이용하며,
 								회원의개인정보를안전하게취급하는데최선을다합니다.</p>
 							<br>
 							<ol>
@@ -552,13 +553,10 @@
 
 
 			<div class="nlogin_join_center">
-		<!-- <button type = "submit" class = "nlogin_btn">가입하기</button> -->
-		<input type = "submit" class = "nlogin_btn" value = "가입하기">
-		<span>이게 나의 최선이다..... 누가 가운데 정렬좀 해주세요.........</span>
-		</div>
+		<button type = "submit" class = "nlogin_btn">가입하기</button>
+			</div>
 		</form>
-			 
-
+		<br>
 	</div>
 
 <%@include file="../footer.jsp" %>

@@ -116,7 +116,7 @@
 
 				</table>
 			</fieldset>
-
+			<br>
 			<fieldset>
 				<legend>선택 입력사항</legend>
 				<table>
@@ -144,14 +144,14 @@
 						<td>${user.u_style }</td>
 					</tr>
 
-					<tr>
+					<%-- <tr>
 						<th scope="row">프로필 이미지</th>
 						<td>${user.u_img}</td>
-					</tr>
+					</tr> --%>
 					</tbody>
 				</table>
 			</fieldset>
-			<br><br>
+			<br>
 
 		<div class="nlogin_join_center">
 		<button type = "submit" class = "nlogin_btn">수정하기</button>	 

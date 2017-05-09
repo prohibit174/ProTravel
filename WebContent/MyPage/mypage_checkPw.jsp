@@ -2,7 +2,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170508">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?version=20170509">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -22,13 +22,9 @@
 
 						<li><a href="main.mypage" class="first-tag active"><span>마이페이지</span></a></li>
 						<li><a href="main.mypage" class=""><span>내 정보 수정</span></a></li>
-						<li><a
-							href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06"
-							class=""><span>내 동행 조회</span></a></li>
-						<li><a href="carpoolCheck.mypage" class=""><span>내
-									카풀조회</span></a></li>
-						<li><a href="productRequestList.mypage" class=""><span>내
-									상품조회</span></a></li>
+						<li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" class=""><span>내 동행 조회</span></a></li>
+						<li><a href="carpoolCheck.mypage" class=""><span>내 카풀조회</span></a></li>
+						<li><a href="productRequestList.mypage" class=""><span>내 상품조회</span></a></li>
 
 					</ul>
 
@@ -50,14 +46,24 @@
 				<!-- e//tabs-list -->
 			</div>
 			<!-- present -->
-			<fieldset>
-				개인 정보 보호를 위해 비밀번호를 입력해주세요.<br>
+			<fieldset id = "requestPW">
+			<div class = "requestPW">
+				개인 정보 보호를 위해 비밀번호를 입력해주세요.
+				</div>
 				<br>
 				<br>
-				<!-- 아이디 입력 <input type = "text" id = "u_id"><br><br> -->
-				비밀번호 입력&nbsp;&nbsp;<input type="password" id="u_pwd" name="u_pwd"><br>
-				<br>
+				<table>
+				
+				<tr>
+				<th scope = "row">
+				비밀번호 입력
+				</th>
+				<td>
+				<input type="password" id="u_pwd" name="u_pwd">
+				</td>
+				</tr>
 				<!-- http://doublesprogramming.tistory.com/94 -->
+				</table>
 			</fieldset>
 
 				
