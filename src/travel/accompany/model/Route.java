@@ -3,6 +3,11 @@ package travel.accompany.model;
 import java.io.Serializable;
 
 public class Route implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Route(String tp_num, String cor_region, String u_id, String tp_date) {
 		super();
 		this.tp_num = tp_num;

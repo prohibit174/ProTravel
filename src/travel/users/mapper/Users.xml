@@ -48,6 +48,11 @@
 	
 	</update>
 
+
+	<select id="checkPw" parameterType="map" resultType="int">
+		SELECT count(*) FROM users WHERE u_id = #{u_id} AND u_pwd = #{u_pwd}
+	
+	</select>
 </mapper>
 
 

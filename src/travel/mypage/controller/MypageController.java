@@ -15,6 +15,8 @@ import travel.mypage.action.CarpoolDeleteAction;
 import travel.mypage.action.CarpoolListAction;
 import travel.mypage.action.CarpoolUpdateAction;
 import travel.mypage.action.CarpoolUpdateAction2;
+import travel.mypage.action.CheckPwAction;
+import travel.mypage.action.ModifyUserAction;
 import travel.mypage.action.MypageMainAction;
 import travel.mypage.action.ProductRequestListAction;
 import travel.mypage.action.UpdateAcceptAction;
@@ -99,7 +101,36 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
+		}else if (command.equals("main.mypage")){
+			action = new MypageMainAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (command.equals("CheckPw.mypage")){
+			action = new CheckPwAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("ModifyUser.mypage")){
+			action = new ModifyUserAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if (command.equals("productRequestList.mypage")){
+			action = new ProductRequestListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
        
     
        
