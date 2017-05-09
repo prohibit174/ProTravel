@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import travel.accompany.action.Action;
 import travel.accompany.action.ActionForward;
+import travel.accompany.action.accomp_createRoute;
 import travel.accompany.action.accomp_main;
 import travel.accompany.action.getUserRoute;
 
@@ -37,14 +38,22 @@ public class AccompanyController extends HttpServlet {
 	       Action action = null;
 	       
 	       if(command.equals("main.accompany")){
-	    	   System.out.println("hihi");
+	    	   /*System.out.println("hihi");*/
 	          action = new accomp_main();
 	          try {
 	             forward = action.execute(request, response);
 	         } catch (Exception e) {
 	            e.printStackTrace();
 	         }
-	          }
+	          }else if(command.equals("accomp_createRoute.accompany")){   //move to create a route page
+		    	   /*System.out.println("hihi");*/
+			          action = new accomp_createRoute();
+			          try {
+			             forward = action.execute(request, response);
+			         } catch (Exception e) {
+			            e.printStackTrace();
+			         }
+			          }
 	        
 	       	   
 	       if(forward !=null){

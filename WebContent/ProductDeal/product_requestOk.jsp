@@ -5,9 +5,9 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 ProductDao dao = ProductDao.getInstance();
-String p_num=request.getParameter("p_num");
+String pr_reqnum=request.getParameter("pr_reqnum");
 
-Product_Request productReq=dao.detailProductReq(p_num);
+Product_Request productReq=dao.detailProductReq(pr_reqnum);
 request.setAttribute("productReq", productReq);
 
 //System.out.println(p_num);
@@ -1549,8 +1549,8 @@ e//btn-box
 <h4 align="center">거래요청 성공 
 </h4>
   <div class="btn-box center">
-            <a class="btn-more" href="mainAction.product"><span>메인으로 가기</span> </a>
-            <a class="btn-more" href="detailReqAction.product?p_num=${productReq.p_num}"><span>확인하기</span></a>
+            <a class="btn-more" href="listAction.product"><span>메인으로 가기</span> </a>
+            <a class="btn-more" href="detailReqAction.product?pr_reqnum=${productReq.pr_reqnum}"><span>확인하기</span></a>
   </div>
 
 <%@include file="../footer.jsp" %>
