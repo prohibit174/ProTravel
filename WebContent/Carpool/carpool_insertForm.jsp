@@ -686,6 +686,20 @@ String id =(String)session.getAttribute("member_id");
     var markerPosition;   
      var marker_zoom4=[];
      var marker_zoom5=[];
+     var latLngList=[];
+     
+     function createLine(latLngList, map){ 
+         var movingPath = new google.maps.Polyline({
+          path: latLngList,
+          geodesic: true,
+          strokeColor: '#000000',
+          strokeOpacity: 10.0,
+          strokeWeight: 1
+        });
+         if(latLngList.length>1){
+         movingPath.setMap(map);
+         }
+      }
     
     
     function initMap() {
@@ -763,46 +777,19 @@ String id =(String)session.getAttribute("member_id");
           title:'zurich'
         });
      
-     function addItineraryOnCalendar(marker) {//마커를 마우스 
-        //var title=marker.getTitle();
-         var temp = new google.maps.Marker({
-       });
-           alert(typeof temp); 
-         temp=marker;
-        
-
-        var position=temp.getPosition();
-       alert(position);
-        $('#calendar').fullCalendar( 'addEventSource', {
-             events: [
-                 {
-                     title: 'Event1',
-                     start: '2017-04-01'
-                 },
-                 {
-                     title: 'Event2',
-                     start: '2017-04-02'
-                 }
-             ],
-             color: 'yellow',   // an option!
-             textColor: 'black' // an option!
-         } )
-        }
      
      for(i=0;i<marker_zoom4.length;i++)
     {
        marker_zoom4[i].addListener('click', function() {
-          alert('marker 4 click event');
-          addItineraryOnCalendar(marker_zoom4[i]);
-
+    	   latLngList.push(this.getPosition());
+    	   createLine(latLngList, map);
         });   
     }
  for(i=0;i<marker_zoom5.length;i++)
  {
     marker_zoom5[i].addListener('click', function() {
-       alert('marker 5 click event');
-       addItineraryOnCalendar(marker_zoom5[i]);
-
+ 	   latLngList.push(this.getPosition());
+    	createLine(latLngList, map);
     });   
  }
 
