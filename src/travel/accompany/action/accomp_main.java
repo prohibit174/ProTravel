@@ -24,7 +24,7 @@ public class accomp_main implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("Accompany/Accomp_main2.jsp");
+		forward.setPath("Accompany/Accomp_main.jsp");
 		
 		return forward;
 	}
