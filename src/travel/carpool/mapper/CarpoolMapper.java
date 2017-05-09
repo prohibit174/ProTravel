@@ -17,4 +17,8 @@ public interface CarpoolMapper {
 	int updateCarpool(Carpool carpool);
 	int countCarpool(Search search);
 	int insertCarpool_Request(Carpool_Request carpool_request);
+	Integer carpool_Request_num();
+	List<Carpool>myMakeCarpool(String u_id);
+	List<Carpool_Request>myRequestCarpool(String u_id);
+	int updatePerson(Carpool carpool);
 }

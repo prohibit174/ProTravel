@@ -150,4 +150,62 @@ public class CarpoolDao {
 			session.close();
 		}
 	}
+	
+	public List<Carpool> myMakeCarpool(String u_id) throws Exception{
+		SqlSession session = getSqlSessionFactory().openSession();
+		try{
+			return session.getMapper(CarpoolMapper.class).myMakeCarpool(u_id);
+		} catch(Exception e){
+			e.printStackTrace();
+			return null;
+		} finally{
+			session.close();
+		}
+	}
+	
+	public List<Carpool_Request>myRequestCarpool(String u_id) throws Exception{
+		SqlSession session = getSqlSessionFactory().openSession();
+		try{
+			return session.getMapper(CarpoolMapper.class).myRequestCarpool(u_id);
+		} catch(Exception e){
+			e.printStackTrace();
+			return null;
+		} finally{
+			session.close();
+		}
+	}
+	
+	public int carpool_Request_num() throws Exception{
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			if(sqlSession.getMapper(CarpoolMapper.class).carpool_num() == null){ //湲��씠 �옉�꽦�릺吏� �븡�쓬.
+				return 0 ;
+			}else{
+				return sqlSession.getMapper(CarpoolMapper.class).carpool_Request_num();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}finally {
+			sqlSession.close();
+		}
+	}
+	
+	public void updatePerson(Carpool carpool){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CarpoolMapper.class).updatePerson(carpool);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+	}
 }
