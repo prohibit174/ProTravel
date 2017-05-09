@@ -42,7 +42,6 @@ public class RouteController extends HttpServlet {
 	       
 	   
 	       if(command.equals("insertRoute.route")){
-	    	   System.out.println("here is insertRoute.route");
 	          action = new insertRoute();
 	          try {
 	             forward = action.execute(request, response);

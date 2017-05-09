@@ -183,7 +183,7 @@
        marker_zoom4[1] = new google.maps.Marker({//� � � «� � � §� �  � � � ¬� � � »� � � ¤� � � «� � � ¥� � � ¼ uluru� � � ¬� �  � �   � � � ¬� � � °� �  � � � ¬� �  � �  
             position: belgiumLocation,
             map: map,
-            title:'Belguim'
+            title:'Belgium'
           });
        marker_zoom4[2] = new google.maps.Marker({//� � � «� � � §� �  � � � ¬� � � »� � � ¤� � � «� � � ¥� � � ¼ uluru� � � ¬� �  � �   � � � ¬� � � °� �  � � � ¬� �  � �  
             position: germanyLocation,
