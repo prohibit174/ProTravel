@@ -41,6 +41,8 @@
 <script data-main="/js/page/city" src="/js/lib/bower_components/requirejs/require.js"></script>
 <script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/NotLoginEvent.js"></script>
+
 <style type="text/css">
   body, pre {
     font-family: "맑은 고딕","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","돋움",Dotum,sans-serif!important;
@@ -74,7 +76,7 @@
 
           <div>
             <a href="JoinForm.users" id="nav-btn-about"  >회원가입</a>
-            <a href = "main.mypage" id="nav-login-btn" class="nav-btn-login">마이페이지</a>
+            <a  id="nav-login-btn" class="myPage_btn">마이페이지</a>
           </div>
 
         </div><!-- login-and-profile -->
