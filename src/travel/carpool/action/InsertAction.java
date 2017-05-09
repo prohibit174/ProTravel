@@ -17,14 +17,20 @@ public class InsertAction implements Action {
 		CarpoolDao dao = CarpoolDao.getInstance();
 		Carpool carpool = new Carpool();
 		HttpSession session = request.getSession();
+		
 		carpool.setC_num(dao.carpool_num() + 1);
 		carpool.setU_id((String)session.getAttribute("member_id"));
-		System.out.println((String)session.getAttribute("member_id"));
-		carpool.setStart_lati(request.getParameter("start_lati"));
-		carpool.setStart_longti(request.getParameter("start_longti"));
-		carpool.setDest_lati(request.getParameter("dest_lati"));
-		carpool.setDest_longti(request.getParameter("dest_longti"));
-		carpool.setC_person(request.getParameter("c_person"));
+		carpool.setStart_point(request.getParameter("start_point"));
+		carpool.setDest_point(request.getParameter("dest_point"));
+		carpool.setWay_point(request.getParameter("way_point"));
+		carpool.setC_price(Integer.parseInt(request.getParameter("c_price")));
+		carpool.setC_person(Integer.parseInt(request.getParameter("c_person")));
+		carpool.setC_year(Integer.parseInt(request.getParameter("c_year")));
+		carpool.setC_month(Integer.parseInt(request.getParameter("c_month")));
+		carpool.setC_date(Integer.parseInt(request.getParameter("c_date")));
+		carpool.setC_hour(Integer.parseInt(request.getParameter("c_hour")));
+		carpool.setC_minute(Integer.parseInt(request.getParameter("c_minute")));
+		
 		
 		dao.insertCarpool(carpool);
 		

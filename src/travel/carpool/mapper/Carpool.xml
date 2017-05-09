@@ -8,17 +8,19 @@
 	<cache />
 	
 	<insert id="insertCarpool" parameterType="Carpool">
-			insert into TEST(
-			c_num, u_id, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dept_time
+			insert into CARPOOL(
+			c_num,  u_id,  start_point,  dest_point,  way_point,  c_price,
+			 c_person,  c_year,  c_month,  c_date,  c_hour,  c_minute
 		)
 		values(
-			#{c_num}, #{u_id}, #{start_lati}, #{start_longti}, #{dest_lati}, #{dest_longti}, 2000, SYSDATE, #{c_person}, SYSDATE
+			#{c_num}, #{u_id}, #{start_point}, #{dest_point}, 'korea', #{c_price}, #{c_person}, 
+			#{c_year}, #{c_month}, #{c_date}, #{c_hour}, #{c_minute}
 		)
 	</insert>
 	
 	
 	<select id="listCarpool" resultType="Carpool" parameterType="Search">
-		select * from test 
+		select * from CARPOOL 
 		<if test="carpool_search !=null">
 		<where>
 		<foreach collection="carpool_search" item="item" separator="or" open="(" close=")">
@@ -29,31 +31,36 @@
 	</select>
 	
 	<select id = "carpool_num" resultType="integer">
-		select max(c_num) from TEST 
+		select max(c_num) from CARPOOL 
 	</select>
 	
 	<select id = "detailCarpool" parameterType="String" resultType="Carpool">
-		select * from test 
+		select * from CARPOOL 
 		where c_num = #{c_num}
 	</select>
 	
 	<delete id = "deleteCarpool" parameterType="Carpool">
-		delete from test 
+		delete from CARPOOL 
 		where c_num = #{c_num}
 	</delete>
 	
 	<update id = "updateCarpool" parameterType="Carpool">
-		update test set 
-		start_lati=#{start_lati},
-		start_longti=#{start_longti},
-		dest_lati=#{dest_lati},
-		dest_longti=#{dest_longti},
-		c_person=#{c_person}
+		update CARPOOL set 
+		start_point=#{start_point},
+		dest_point=#{dest_point},
+		way_point=#{way_point},
+		c_person=#{c_person},
+		c_price=#{c_price},
+		c_year=#{c_year},
+		c_month=#{c_month},
+		c_date=#{c_date},
+		c_hour=#{c_hour},
+		c_minute={c_minute}
 		where c_num=#{c_num}
 	</update>
 	
 	<select id="countCarpool" resultType="int" parameterType="Search">
-		select count(*) from TEST	
+		select count(*) from CARPOOL	
 		<!-- Carpool list paging work -->
 		<if test="carpool_search !=null">
 				<where>
@@ -65,11 +72,37 @@
 			</if>
 	</select>
 	
+	<!--  성사 --> 
 	<insert id= "insertCarpool_Request" parameterType="Carpool_Request">
-		insert into TEST1 VALUES(cr_num.nextval, 'x', #{c_num}, #{u_id})
+		insert into carpool_request VALUES(#{cr_num}, 'x', #{c_num}, #{u_id})
 	</insert>
 	
+	<select id = "detailCarpool_Request" parameterType="String" resultType="Carpool_Request">
+		select * from carpool_request 
+		where cr_num = #{cr_num}
+	</select>
+	
+	<delete id = "deleteCarpool_Request" parameterType="Carpool_Request">
+		delete from carpool_request
+		where cr_num = #{cr_num}
+	</delete>
+	
+	<select id="carpool_Request_num" resultType="integer">
+	select max(cr_num) from carpool_request
+	</select> 
+	
+	<update id="updatePerson" parameterType="Carpool">
+	update carpool set c_person=c_person-1 where c_num=#{c_num}
+	</update>
+	
+	<!--  마이페이지 --> 
+	<select id="myMakeCarpool" resultType="Carpool" parameterType="String">
+	select * from carpool where u_id=#{u_id}
+	</select> 
 
+<select id="myRequestCarpool" resultType="Carpool_Request" parameterType="String">
+select * from carpool_request where u_id=#{u_id}
+</select>
 </mapper>
 
 

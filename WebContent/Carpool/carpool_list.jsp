@@ -124,29 +124,27 @@ function applyLink(URL){
 										<span>등록자 : ${carpool.u_id }</span>
 									</p>
 									<p>
-										<span>${carpool.start_lati }</span>
+										<span>출발지 : ${carpool.start_point }</span>
 									</p>
 									<p>
-										<span>${carpool.start_longti}</span>
+										<span>도착지 : ${carpool.dest_point}</span>
 									</p>
 									<p>
-										<span>${carpool.dest_lati }</span>
+										<span>경유지 : ${carpool.way_point }</span>
 									</p>
 									<p>
-										<span>${carpool.dest_longti}</span>
-									</p>
-									<p>
-										<span>가격 : ${carpool.c_person}</span>
+										<span>가격 : ${carpool.c_price}</span>
 									</p>
 									<p>
 										<span>남은좌석 ${carpool.c_person}</span>
 									</p>
 									<p>
-										<span>출발일시 : ${carpool.c_date}</span>
+										<span>출발일시 : ${carpool.c_year}년 ${carpool.c_month} 월 ${carpool.c_date}일 </span>
 									</p>
 									<p>
-										<span>도착일시 : ${carpool.c_dept_time}</span>
+										<span>${carpool.c_hour }시 ${carpool.c_minute }분 </span>
 									</p>
+								
 
 <!-- 									<div class="sign">
 										<input type = "button" value="신청" class='apply_button'>

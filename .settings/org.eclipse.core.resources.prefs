@@ -15,6 +15,7 @@ encoding//WebContent/main2.jsp=UTF-8
 encoding//src/travel/carpool/action/ActionForward.java=UTF-8
 encoding//src/travel/carpool/controller/CarpoolController.java=UTF-8
 encoding//src/travel/carpool/mapper/CarpoolMapper.java=UTF-8
+encoding//src/travel/carpool/model/Carpool.java=UTF-8
 encoding//src/travel/carpool/model/CarpoolDao.java=UTF-8
 encoding//src/travel/carpool/model/ListModel.java=UTF-8
 encoding//src/travel/main/action/ActionForward.java=UTF-8

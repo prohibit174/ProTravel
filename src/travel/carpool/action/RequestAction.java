@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import travel.carpool.model.Carpool;
 import travel.carpool.model.CarpoolDao;
 import travel.carpool.model.Carpool_Request;
 
@@ -25,13 +26,16 @@ public class RequestAction implements Action {
 		String c_num = request.getParameter("c_num");
 		
 		carpool_request.setC_num(c_num);
+		carpool_request.setCr_num(dao.carpool_Request_num()+1);
 		carpool_request.setU_id(u_id);
-		
 		dao.insertCarpool_Request(carpool_request);
+		
+		Carpool carpool = dao.detailCarpool(c_num);
+		dao.updatePerson(carpool);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("home.main");
+		forward.setPath("carpoolCheck.mypage");
 		
 		return forward;
 	}
