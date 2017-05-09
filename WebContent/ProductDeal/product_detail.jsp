@@ -15,9 +15,7 @@
 	String p_num=request.getParameter("p_num");
 
     ProductDao dao = ProductDao.getInstance();
-    Product_Search proSearch=new Product_Search();
-	
-    List<Product> list = dao.listProduct(proSearch);
+
     Product product=dao.detailProduct(p_num);
     
     request.setAttribute("product", product);
@@ -48,12 +46,13 @@
     	}
 	
 	
-		function btn_js_request_click(){
-    	  /* confirm(문자열, 초기값) */
-    	  var check = confirm("요청하시겠습니까?");
-    	  /* if(check == true) else false */
-    	  if(check) document.location.href="detailReqAction.product?p_num=<%=product.getP_num()%>";
-    	}
+	function btn_js_request_click(){
+  	  /* confirm(문자열, 초기값) */
+  	  var check = confirm("요청하시겠습니까?");
+  	  /* if(check == true) else false */
+  	  if(check) document.location.href="insertReqFormAction.product?p_num=<%=product.getP_num()%>";
+  	  
+		}
   </script>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
@@ -89,7 +88,7 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
+            <li><a href="listAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
             <li><a href="insertForm.product"><span>물품 등록</span></a></li>
@@ -125,7 +124,8 @@
             
             <input type="hidden" id="total_amount" value="0">
 <link href="http://static2.tmon.kr/static/gen/css/jquery.jqzoom.css?v=0662945f6041df0748663a319955ef132fa97499" rel="stylesheet" type="text/css"/>
-                                    <div class="deal_detail_wrap deal_detail_type2">
+                                 
+                                     <div class="deal_detail_wrap deal_detail_type2">
                 <div class="img_area" style="width:350px;height:402px;visibility:;">
                 <div class="main_img" id="main_img" style="width:350px;height:402px;visibility:;">
                         <div class="condition" style="z-index:100">
@@ -198,11 +198,17 @@
                         </div>
          
                         <div class="btn_area default">
-                                                            <div class="btn_direct"><a id="buy_button" href="#buy">거래요청</a></div>                                                                                                  
-                          
-                            <div  class="click_zzim z_548520330">
-                                <input type="hidden" id="zzim_count" value="1414"><a id="deal_zzim" class="btn_zzim " style="cursor:pointer" value="548520330" tl:area="BWCO" tl:ord="2">쪽지보내기</a>
-                            </div>
+                                       <!-- boram  -->
+						<c:choose>
+					       <c:when test="${u_id == product.u_id}">
+					<input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="수정하기" />  		 
+                    <input type="button" name="btn_js_delete" id="btn_js_delete" onclick="btn_js_delete_click();" value="삭제하기" />
+					       </c:when>
+					       <c:otherwise>
+					<input type="button" name="btn_js_request_update" id="btn_js_request_update" onclick="btn_js_request_click();" value="거래요청" />
+					       </c:otherwise>
+				 	  </c:choose>
+						<!-- boram -->                           
                         </div>
                   
                     </div>
@@ -222,19 +228,7 @@
                             </div>
                         </div>
                         <p class="caution_dsc"></p>
-                        <div class="btn_area">
-                        <!-- boram  -->
-						<c:choose>
-					       <c:when test="${u_id == product.u_id}">
-					<input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="수정하기" />  		 
-                    <input type="button" name="btn_js_delete" id="btn_js_delete" onclick="btn_js_delete_click();" value="삭제하기" />
-					       </c:when>
-					       <c:otherwise>
-					<input type="button" name="btn_js_request_update" id="btn_js_request_update" onclick="btn_js_request_click();" value="거래요청" />
-					       </c:otherwise>
-				 	  </c:choose>
-						<!-- boram -->
-                        </div>
+
                     </div>
                     <a style="cursor:pointer" id="lpop_btn_close_new" class="btn_clse">
                     </a>
@@ -263,9 +257,6 @@
     </div>
       
     <!-- boram end -->
-    
-    
-
 
               </div>
               <div class="clear"></div>

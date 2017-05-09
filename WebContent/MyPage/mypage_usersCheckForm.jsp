@@ -40,7 +40,7 @@
             <li><a href="main.mypage"  class=""><span>내 정보 수정</span></a></li>
             <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" class=""><span>내 동행 조회</span></a></li>
             <li><a href="carpoolCheck.mypage" class=""><span>내 카풀조회</span></a></li>
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d"  class=""><span>내 상품조회</span></a></li>
+            <li><a href="productRequestList.mypage"  class=""><span>내 상품조회</span></a></li>
             
 		</ul>
 

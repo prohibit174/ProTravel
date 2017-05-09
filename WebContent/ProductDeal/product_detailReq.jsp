@@ -37,7 +37,7 @@ System.out.println(productReq.getP_num());
                 
                 <ul class="tabs-list">
     
-          <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
+          <li><a href="listAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
             <li><a href="insertForm.product"><span>물품 등록</span></a></li>

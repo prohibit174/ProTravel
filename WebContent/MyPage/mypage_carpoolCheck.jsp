@@ -3,6 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -25,10 +26,10 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal" class="first-tag active"><span>마이페이지</span></a></li> 
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=5d1504d8bebfc81e" data-id="5d1504d8bebfc81e" class=""><span>내 정보 수정</span></a></li>
+            <li><a href="main.mypage" class="first-tag active"><span>마이페이지</span></a></li> 
+            <li><a href="UpdateUserAction.mypage"><span>내 정보 수정</span></a></li>
             <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>내 동행 조회</span></a></li>
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 카풀조회</span></a></li>
+            <li><a href="carpoolCheck.mypage"><span>내 카풀조회</span></a></li>
             <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 상품조회</span></a></li>
             
 		</ul>
@@ -77,35 +78,32 @@
          </c:forEach>
       </table>
 			</fieldset>
-			
 			<fieldset>
-			<legend>카풀 구매현황</legend>
-            <table class="primary_table">
-            <tr>
-            <th>이름</th>
-            <th>출발일</th>
-            <th>출발시간</th>
-            <th>남은인원</th>
-            <th>가격</th> 
-            <th>주소</th> 
-            </tr>
-            <tr>
-            <td>박윤기</td>
-            <td>실험용</td>
-            <td>DB되면</td>
-            <td>여기</td>
-            <td>추가</td>
-            <td>하면됨</td>
+				<legend>카풀 구매현황</legend>
+            		<table class="primary_table">
+            			<tr>
+            				<th>카풀구매번호</th>
+            				<th>카풀등록번호</th>
+            				<th>수락현황</th>
+            				<th>판매자아이디</th>
+            				<th>취소</th>
+           				 </tr>
+						<c:forEach var="carpool_Request" items="${cr_list}">
+      					<tr height="30">
+         					<td align="center">${carpool_Request.cr_num }</td>
+         					<td align="center">${carpool_Request.c_num }</td>
+         					<td align="center">${carpool_Request.cr_ox }</td>
+         					<td align="center">${carpool_Request.u_id}</td>
+         					<td align="center"><input type="button" value="취소" onclick="location.href='carpoolDelete.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
+         
+         </tr>
+         </c:forEach>
             </table>
 			
 					<div class="nlogin_join_center">
-		<button type = "submit" class = "nlogin_btn">취소</button>
+					<input type = "button" value="카풀홈" onclick = "location.href='main.carpool'" class = "nlogin_btn">
 		</div>
 			</fieldset>
-
-
-		
-		
 		</form>
 
 
