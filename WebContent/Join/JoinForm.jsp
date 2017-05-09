@@ -80,14 +80,14 @@
 					<tr>
 					<th scope="row">닉네임</th>
 					<td>
-					<input type = "text" name = "u_name">
+					<input type = "text" name = "u_name" id = "u_name">
 					</td>
 					</tr>
 					
 					<tr>
 					<th scope = "row">생년월일</th>
 					<td>
-					<input type = "text" name = "u_birth" placeholder = "yyyyMMdd">
+					<input type = "text" name = "u_birth" id = "u_birth" placeholder = "yyyyMMdd">
 					</td>
 					</tr>
 					
@@ -115,7 +115,7 @@
 					<tr>
 					<th scope = "row">거주 지역</th>
 					<td>
-					 <input type = "text" name = "u_address">	
+					 <input type = "text" name = "u_address" id = "u_address">	
 					</td>
 					</tr>
 
