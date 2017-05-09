@@ -6,6 +6,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="travel.accompany.model.Accompany" alias="Accompany"/>
+		<typeAlias type="travel.accompany.model.Route" alias="Route"/>
 	</typeAliases>
 	
 	<environments default="development">
