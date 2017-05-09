@@ -567,6 +567,15 @@ fbset = {
 
 	        		$('#nlogin_gender').trigger('click');
 	        		$('#nlogin_gender').find('a[data-value="'+sex+'"]').eq(0).trigger('click');
+	        		
+	        		$('#nlogin_price').trigger('click');
+	        		$('#nlogin_price').find('a[data-value="'+sex+'"]').eq(0).trigger('click');
+
+	        		$('#nlogin_hour').trigger('click');
+	        		$('#nlogin_hour').find('a[data-value="'+sex+'"]').eq(0).trigger('click');
+
+	        		$('#nlogin_minute').trigger('click');
+	        		$('#nlogin_minute').find('a[data-value="'+sex+'"]').eq(0).trigger('click');
 
 	        		/*
 	        		$('#birth_y').val(year);
@@ -685,4 +694,6 @@ $(function() {
 			location.href = nvJoinUrl;
 		}
 	});
+	
+
 });
