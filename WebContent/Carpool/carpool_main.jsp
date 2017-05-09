@@ -3,7 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+<script src="${pageContext.request.contextPath}/JS/vendor/modernizr.custom.min.js"></script>
+<script src="${pageContext.request.contextPath}/JS/vendor/jquery-1.10.2.min.js"></script>
+<script src="${pageContext.request.contextPath}/JS/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="${pageContext.request.contextPath}/JS/main.js"></script>
 <%@include file="../header.jsp" %>
 
 
