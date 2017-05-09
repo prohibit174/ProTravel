@@ -30,11 +30,39 @@ public class AccompanyDao {
 		return new SqlSessionFactoryBuilder().build(input);
 	}
 
-	public List<Accompany> selectUserRoute(String userID) throws Exception {
+	public List<Accompany> getUserRoute(Route route) throws Exception {
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<Accompany> list = null;
 		try {
-			list = session.getMapper(TravelMapper.class).selectUserRoute("0");
+			list = session.getMapper(TravelMapper.class).getUserRoute(route);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		
+		return list;
+	}
+	
+	public List<Accompany> getUserInfo(String ID) throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<Accompany> list = null;
+		try {
+			list = session.getMapper(TravelMapper.class).getUserInfo(ID);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		
+		return list;
+	}
+
+	public List<Accompany> getAccompanies(Accompany accompany) throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<Accompany> list = null;
+		try {
+			list = session.getMapper(TravelMapper.class).getAccompanies(accompany);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
