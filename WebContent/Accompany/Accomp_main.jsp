@@ -140,7 +140,6 @@ System.out.println("allAccompanyList.size : " +allAccompanyList.size());
     var markerIndex=0;
     var latLngList=[];
     
-    
     </script>
     <c:forEach var="accompany" items="${list}">
     
@@ -241,15 +240,8 @@ System.out.println("allAccompanyList.size : " +allAccompanyList.size());
  </c:forEach>
     
     <script>
-    function hideAccom(){
-    	 for(i=0;i<markerIndex;i++)
-    		 infowindow[i].close();
-    }
-
-    function showAccom(){
-   	 for(i=0;i<markerIndex;i++)
-   		 infowindow[i].open(map,marker[i]);
-   }
+    
+   
     
     function showRightAccom(rightIndex, markerIndex){
     	console.log('Index : '+ rightIndex);
@@ -312,6 +304,7 @@ System.out.println("allAccompanyList.size : " +allAccompanyList.size());
     				}
     		}
     	}
+    
     
 function showLeftAccom(leftIndex, markerIndex){
     	
@@ -468,8 +461,8 @@ function showLeftAccom(leftIndex, markerIndex){
 	     		 /* alert(parseInt(thisYear)-parseInt(accom_tp_date[j].substr(0,4))); */
         		 }
         	}
-        
-      
+
+           
         	
        // alert(parseInt(thisYear));
       // alert(parseInt(accom_birth[0].substr(0,4)));
@@ -487,14 +480,36 @@ function showLeftAccom(leftIndex, markerIndex){
             movingPath.setMap(map);
             }
          }
-        
+      	  
       }
+      
+      function hideAccom(){
+    	   	 for(i=0;i<markerIndex;i++){
+    	   		 if(typeof infowindow[i] == 'undefined'){
+    	   			 continue;}
+    	   	/* 	 console.log(markerIndex);
+    	   		 console.log(i+"번째"+typeof infowindow[i]); */
+    	   		  infowindow[i].close();  
+    	   		
+    	   	 }
+    	   	 }
+
+    	   function showAccom(){
+    	  	 for(i=0;i<markerIndex;i++){
+    	  		 if(typeof infowindow[i] == 'undefined'){
+    	   			 continue;}
+    	  		 infowindow[i].open(map, marker[i]);
+    	  	 }
+    	  }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnrWQ2SHvedNrvdozheYo32pHwCbuvPgs&callback=initMap">
     </script>
-      <input id="aaa" type="button" onclick="showAccom()" value="동행 추천 보이기" />
-      <input id="aaa" type="button" onclick="hideAccom()" value="동행 추천 숨기기" style="position: absolute,
+   
+    
+      <input id="aaa" type="button" onclick="showAccom()" value="동행 추천 보이기">
+      <input id="aaa" type="button" onclick="hideAccom()" value="동행 추천 숨기기"
+      	 style="position: absolute,
         top: 10px,
         left: 25%,
         z-index: 5,
@@ -504,7 +519,7 @@ function showLeftAccom(leftIndex, markerIndex){
         text-align: center,
         font-family: 'Roboto','sans-serif',
         line-height: 30px,
-        padding-left: 10px,">
+        padding-left: 10px" >
     </div>
             </div>
 
