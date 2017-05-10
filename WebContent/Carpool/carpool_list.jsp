@@ -117,7 +117,24 @@ function applyLink(URL){
 							<li>
 								<div class="top">
 									<h5>등록번호 : ${carpool.c_num }</h5>
-									<div class="circle">이미지</div>
+									<div class="circle">							
+						<c:if test="${carpool.u_img!=null}">
+		                  <c:set var="head"
+		                     value="${fn:substring(carpool.u_img, 0, fn:length(carpool.u_img)-4) }"></c:set>
+		                  <c:set var="pattern"
+		                     value="${fn:substring(carpool.u_img, fn:length(head)+1, fn:length(carpool.u_img)) }"></c:set>
+		
+		                  <c:choose>
+		                     <c:when test="${pattern=='jpg' || pattern =='gif' || pattern =='png' }">
+		                        <img src="upload/${head }_small.${pattern}" alt="img /">
+		                     </c:when>
+		                     <c:otherwise>
+		                        <c:out value="No IMAGE"></c:out>
+		                     </c:otherwise>
+		                  </c:choose>
+		               </c:if>
+               </div>
+			
 								</div>
 								<div class="bottom">
 									<p>

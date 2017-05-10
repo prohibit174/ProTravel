@@ -10,11 +10,11 @@
 	<insert id="insertCarpool" parameterType="Carpool">
 			insert into CARPOOL(
 			c_num,  u_id,  start_point,  dest_point,  way_point,  c_price,
-			 c_person,  c_year,  c_month,  c_date,  c_hour,  c_minute
+			 c_person,  c_year,  c_month,  c_date,  c_hour,  c_minute, u_img
 		)
 		values(
 			#{c_num}, #{u_id}, #{start_point}, #{dest_point}, 'korea', #{c_price}, #{c_person}, 
-			#{c_year}, #{c_month}, #{c_date}, #{c_hour}, #{c_minute}
+			#{c_year}, #{c_month}, #{c_date}, #{c_hour}, #{c_minute}, #{u_img}
 		)
 	</insert>
 	

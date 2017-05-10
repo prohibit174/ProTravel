@@ -9,6 +9,8 @@ import javax.servlet.http.HttpSession;
 
 import travel.carpool.model.Carpool;
 import travel.carpool.model.CarpoolDao;
+import travel.users.model.Users;
+import travel.users.model.UsersDao;
 
 public class InsertAction implements Action {
 
@@ -17,9 +19,13 @@ public class InsertAction implements Action {
 		CarpoolDao dao = CarpoolDao.getInstance();
 		Carpool carpool = new Carpool();
 		HttpSession session = request.getSession();
+		String u_id = (String)session.getAttribute("member_id");
 		
+		UsersDao userdao = UsersDao.getInstance();
+		Users user = userdao.userDetail(u_id);
+			
 		carpool.setC_num(dao.carpool_num() + 1);
-		carpool.setU_id((String)session.getAttribute("member_id"));
+		carpool.setU_id(u_id);
 		carpool.setStart_point(request.getParameter("start_point"));
 		carpool.setDest_point(request.getParameter("dest_point"));
 		carpool.setWay_point(request.getParameter("way_point"));
@@ -30,6 +36,7 @@ public class InsertAction implements Action {
 		carpool.setC_date(Integer.parseInt(request.getParameter("c_date")));
 		carpool.setC_hour(Integer.parseInt(request.getParameter("c_hour")));
 		carpool.setC_minute(Integer.parseInt(request.getParameter("c_minute")));
+		carpool.setU_img(user.getU_img());
 		
 		
 		dao.insertCarpool(carpool);
